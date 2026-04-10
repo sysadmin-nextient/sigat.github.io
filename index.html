@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Contact | SIG Industrial Group</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-container": "#5a666d",
+                        "on-error": "#ffffff",
+                        "surface-container-low": "#f3f3f3",
+                        "surface": "#f9f9f9",
+                        "on-primary-fixed-variant": "#930011",
+                        "on-secondary-fixed-variant": "#3c494f",
+                        "on-primary-container": "#ffb2ab",
+                        "on-background": "#1a1c1c",
+                        "error-container": "#ffdad6",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-container": "#a4c7ff",
+                        "on-primary-fixed": "#410003",
+                        "inverse-surface": "#2f3131",
+                        "primary-container": "#a80015",
+                        "secondary-fixed": "#d7e4ec",
+                        "tertiary-fixed-dim": "#a6c8ff",
+                        "on-surface-variant": "#5b403d",
+                        "surface-container-high": "#e8e8e8",
+                        "surface-container": "#eeeeee",
+                        "surface-variant": "#e2e2e2",
+                        "secondary": "#546067",
+                        "outline-variant": "#e4beba",
+                        "tertiary-fixed": "#d5e3ff",
+                        "tertiary-container": "#00529a",
+                        "surface-container-highest": "#e2e2e2",
+                        "surface-bright": "#f9f9f9",
+                        "on-tertiary-fixed": "#001c3b",
+                        "on-tertiary": "#ffffff",
+                        "tertiary": "#003b72",
+                        "primary-fixed": "#ffdad6",
+                        "background": "#f9f9f9",
+                        "surface-dim": "#dadada",
+                        "on-surface": "#1a1c1c",
+                        "primary": "#7c000d",
+                        "error": "#ba1a1a",
+                        "primary-fixed-dim": "#ffb3ad",
+                        "surface-tint": "#bb1720",
+                        "secondary-container": "#d7e4ec",
+                        "inverse-primary": "#ffb3ad",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed-variant": "#004787",
+                        "secondary-fixed-dim": "#bbc8d0",
+                        "on-secondary-fixed": "#111d23",
+                        "on-primary": "#ffffff",
+                        "outline": "#906f6c",
+                        "inverse-on-surface": "#f1f1f1"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .font-headline {
+            font-family: 'Manrope', sans-serif;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .field-error {
+            color: #ba1a1a;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-top: 4px;
+            display: none;
+        }
+
+        .field-error.visible {
+            display: block;
+        }
+
+        .input-invalid {
+            border-bottom: 2px solid #ba1a1a !important;
+            background-color: #fff8f7 !important;
+        }
+
+        .input-valid {
+            border-bottom: 2px solid #2e7d32 !important;
+        }
+    </style>
+</head>
+
+<body class="bg-surface text-on-surface">
+
+    <!-- Hidden iframe: Google Form submits here so no new tab opens,
+         allowing the PDF window.open to be the sole popup (never blocked) -->
+    <iframe name="google-form-iframe" style="display:none;" aria-hidden="true"></iframe>
+
+    <!-- Fallback toast shown only after submit if popup was blocked -->
+    <div id="pdf-fallback-toast"
+        style="display:none;position:fixed;bottom:80px;right:24px;z-index:9999;background:#1a1c1c;color:#fff;padding:16px 20px;border-left:4px solid #7c000d;border-radius:2px;box-shadow:0 8px 32px rgba(0,0,0,0.25);font-family:'Inter',sans-serif;font-size:0.875rem;max-width:320px;">
+        <p style="margin:0 0 10px 0;"><strong style="color:#ffb3ad;">Popup was blocked.</strong><br>You've submitted successfully! Click below to open your brochure:</p>
+        <a href="605AthenaOM.pdf" target="_blank"
+            style="display:inline-block;background:#7c000d;color:#fff;padding:8px 18px;border-radius:2px;font-weight:700;font-size:0.8rem;letter-spacing:0.04em;text-decoration:none;">&#128196; OPEN BROCHURE PDF</a>
+        <button onclick="document.getElementById('pdf-fallback-toast').style.display='none'"
+            style="display:block;margin-top:10px;background:transparent;border:none;color:rgba(255,255,255,0.5);cursor:pointer;font-size:0.75rem;padding:0;">Dismiss</button>
+    </div>
+
+    <!-- TopNavBar -->
+    <nav
+        class="fixed top-0 left-0 right-0 z-50 bg-[#f3f3f3] dark:bg-stone-900 flex justify-between items-center w-full px-8 py-6 max-w-none">
+        <div class="flex items-center">
+            <img alt="Stockage Industrial Group" class="h-12 w-auto" src="sig-logo.png" />
+        </div>
+
+    </nav>
+    <main class="pt-32 pb-24 px-8 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-start">
+            <!-- Left Column: Form & Core Identity -->
+            <div class="lg:col-span-7">
+                <header class="mb-12">
+                    <div
+                        class="inline-block px-3 py-1 bg-surface-container-high rounded-sm text-[0.75rem] font-bold tracking-[0.05em] text-primary mb-4 font-label">
+                        GET IN TOUCH
+                    </div>
+                    <h1
+                        class="text-[3.5rem] font-extrabold font-headline leading-[1.1] tracking-[-0.02em] text-on-surface mb-6">
+                        Architectural <br />Integrity &amp; Scale.
+                    </h1>
+                    <p class="text-lg text-secondary max-w-xl font-body leading-relaxed">
+                        Secure your next industrial asset with precision. Our team specializes in Class A logistics and
+                        warehouse solutions.
+                    </p>
+                </header>
+                <!-- Contact Form -->
+                <form
+                    action="https://docs.google.com/forms/d/e/1FAIpQLSd-KnilobJlVsBV0Jre-o6jisDWv9BaNFk3Jwa1zfs7nHuy9Q/formResponse"
+                    method="POST" target="google-form-iframe" class="space-y-8 bg-surface-container-low p-10 rounded-sm">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="flex flex-col gap-2">
+                            <label
+                                class="text-[0.75rem] font-bold tracking-[0.05em] text-on-surface-variant font-label">FULL
+                                NAME</label>
+                            <input name="entry.1290280160"
+                                class="bg-surface-container-high border-none border-b-2 border-transparent focus:border-primary focus:ring-0 py-3 px-0 font-body text-on-surface placeholder:text-stone-400"
+                                placeholder="John Doe" type="text" />
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label
+                                class="text-[0.75rem] font-bold tracking-[0.05em] text-on-surface-variant font-label">EMAIL
+                                ADDRESS</label>
+                            <input name="entry.1314422356"
+                                class="bg-surface-container-high border-none border-b-2 border-transparent focus:border-primary focus:ring-0 py-3 px-0 font-body text-on-surface placeholder:text-stone-400"
+                                placeholder="j.doe@logistics.com" type="email" />
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="flex flex-col gap-2">
+                            <label
+                                class="text-[0.75rem] font-bold tracking-[0.05em] text-on-surface-variant font-label">PHONE
+                                NUMBER</label>
+                            <input name="entry.1975997910"
+                                class="bg-surface-container-high border-none border-b-2 border-transparent focus:border-primary focus:ring-0 py-3 px-0 font-body text-on-surface placeholder:text-stone-400"
+                                placeholder="+1 (000) 000-0000" type="tel" />
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label
+                                class="text-[0.75rem] font-bold tracking-[0.05em] text-on-surface-variant font-label">COMPANY
+                                NAME</label>
+                            <input name="entry.2055639696"
+                                class="bg-surface-container-high border-none border-b-2 border-transparent focus:border-primary focus:ring-0 py-3 px-0 font-body text-on-surface placeholder:text-stone-400"
+                                placeholder="Acme Logistics Inc." type="text" />
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <label
+                            class="text-[0.75rem] font-bold tracking-[0.05em] text-on-surface-variant font-label">MESSAGE <span class="font-normal normal-case tracking-normal opacity-60">(Optional)</span></label>
+                        <textarea name="entry.1532791655"
+                            class="bg-surface-container-high border-none border-b-2 border-transparent focus:border-primary focus:ring-0 py-3 px-0 font-body text-on-surface placeholder:text-stone-400 resize-none"
+                            placeholder="Briefly describe your property requirements..." rows="4"></textarea>
+                    </div>
+                    <button
+                        class="w-full bg-gradient-to-r from-primary to-primary-container text-white py-4 font-headline font-bold text-lg tracking-tight rounded-sm hover:opacity-90 transition-all flex justify-between items-center px-8 group"
+                        type="submit">
+                        SUBMIT INQUIRY
+                        <span
+                            class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                    </button>
+                </form>
+
+                <!-- Property Details -->
+                <div class="mt-10 bg-surface-container-low rounded-sm overflow-hidden border-l-4 border-primary">
+                    <div class="px-8 py-5 border-b border-surface-container-high">
+                        <span class="text-[0.75rem] font-bold tracking-[0.05em] text-primary font-label">PROPERTY
+                            DETAILS</span>
+                    </div>
+                    <dl class="divide-y divide-surface-container-high">
+                        <div
+                            class="flex items-center justify-between px-8 py-4 hover:bg-surface-container transition-colors duration-150">
+                            <dt class="text-[0.75rem] font-bold tracking-[0.05em] text-on-surface-variant font-label">
+                                LOT SIZE</dt>
+                            <dd class="font-headline font-bold text-on-surface text-sm">3 Acres</dd>
+                        </div>
+                        <div
+                            class="flex items-center justify-between px-8 py-4 hover:bg-surface-container transition-colors duration-150">
+                            <dt class="text-[0.75rem] font-bold tracking-[0.05em] text-on-surface-variant font-label">
+                                BUILDING SIZE</dt>
+                            <dd class="font-headline font-bold text-on-surface text-sm">10,000 SF</dd>
+                        </div>
+                        <div
+                            class="flex items-center justify-between px-8 py-4 hover:bg-surface-container transition-colors duration-150">
+                            <dt class="text-[0.75rem] font-bold tracking-[0.05em] text-on-surface-variant font-label">
+                                OUTDOOR STORAGE</dt>
+                            <dd class="font-headline font-bold text-on-surface text-sm">2 Acres Fenced &amp; Graveled
+                            </dd>
+                        </div>
+                        <div
+                            class="flex items-center justify-between px-8 py-4 hover:bg-surface-container transition-colors duration-150">
+                            <dt class="text-[0.75rem] font-bold tracking-[0.05em] text-on-surface-variant font-label">
+                                CONSTRUCTION</dt>
+                            <dd class="font-headline font-bold text-on-surface text-sm">Class A New Construction</dd>
+                        </div>
+                        <div
+                            class="flex items-center justify-between px-8 py-4 hover:bg-surface-container transition-colors duration-150">
+                            <dt class="text-[0.75rem] font-bold tracking-[0.05em] text-on-surface-variant font-label">
+                                ZONING</dt>
+                            <dd class="font-headline font-bold text-on-surface text-sm">E-I</dd>
+                        </div>
+                        <div
+                            class="flex items-center justify-between px-8 py-4 hover:bg-surface-container transition-colors duration-150">
+                            <dt class="text-[0.75rem] font-bold tracking-[0.05em] text-on-surface-variant font-label">
+                                AVAILABILITY</dt>
+                            <dd class="font-headline font-bold text-primary text-sm">For Sale or Lease</dd>
+                        </div>
+                    </dl>
+                </div>
+
+                <div class="mt-12 flex flex-col md:flex-row gap-12 items-start md:items-center">
+                    <div class="flex flex-col">
+                        <span
+                            class="text-[0.75rem] font-bold tracking-[0.05em] text-on-surface-variant font-label mb-1">DIRECT
+                            LINE</span>
+                        <a class="text-2xl font-bold font-headline text-primary"
+                            href="tel:678-608-1064">678-608-1064</a>
+                    </div>
+                    <div class="flex flex-col">
+                        <span
+                            class="text-[0.75rem] font-bold tracking-[0.05em] text-on-surface-variant font-label mb-1">SITE</span>
+                        <address class="not-italic font-body text-on-surface">605 Athena DrAthens, GA
+                        </address>
+                    </div>
+                </div>
+            </div>
+            <!-- Right Column: Property Images -->
+            <div class="lg:col-span-5 flex flex-col gap-6">
+                <!-- Property Image 1 -->
+                <div class="relative group overflow-hidden rounded-sm" style="height: 360px;">
+                    <img class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                        alt="SIG Industrial Property - Aerial view showing warehouse facility with parking and surrounding land"
+                        src="sig-property-1.png" />
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-on-background/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    </div>
+                </div>
+                <!-- Property Image 2 -->
+                <div class="relative group overflow-hidden rounded-sm" style="height: 360px;">
+                    <img class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                        alt="SIG Industrial Property - Aerial view showing warehouse with road access and adjacent land"
+                        src="sig-property-2.png" />
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-on-background/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-[#f3f3f3] dark:bg-stone-900 border-none">
+
+    </footer>
+    <script>
+            (function () {
+                var form = document.querySelector('form[action*="formResponse"]');
+                if (!form) return;
+
+                var fields = {
+                    name: { el: form.querySelector('[name="entry.1290280160"]'), msg: 'Full name is required.' },
+                    email: { el: form.querySelector('[name="entry.1314422356"]'), msg: 'A valid email address is required.' },
+                    phone: { el: form.querySelector('[name="entry.1975997910"]'), msg: 'A valid phone number is required.' },
+                    company: { el: form.querySelector('[name="entry.2055639696"]'), msg: 'Company name is required.' }
+                };
+
+                // Inject error spans below each field
+                Object.keys(fields).forEach(function (key) {
+                    var f = fields[key];
+                    if (!f.el) return;
+                    var span = document.createElement('span');
+                    span.className = 'field-error';
+                    span.id = 'err-' + key;
+                    span.textContent = f.msg;
+                    f.el.parentNode.appendChild(span);
+
+                    // Live validation on blur
+                    f.el.addEventListener('blur', function () { validateField(key); });
+                    f.el.addEventListener('input', function () {
+                        if (f.el.classList.contains('input-invalid')) validateField(key);
+                    });
+                });
+
+                function validateField(key) {
+                    var f = fields[key];
+                    var val = f.el.value.trim();
+                    var valid = true;
+
+                    if (key === 'email') {
+                        valid = val.length > 0 && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val);
+                    } else if (key === 'phone') {
+                        valid = val.length > 0 && /^[\d\s()\-+.]{7,20}$/.test(val);
+                    } else {
+                        valid = val.length > 0;
+                    }
+
+                    var errEl = document.getElementById('err-' + key);
+                    if (valid) {
+                        f.el.classList.remove('input-invalid');
+                        f.el.classList.add('input-valid');
+                        if (errEl) errEl.classList.remove('visible');
+                    } else {
+                        f.el.classList.add('input-invalid');
+                        f.el.classList.remove('input-valid');
+                        if (errEl) errEl.classList.add('visible');
+                    }
+                    return valid;
+                }
+
+                form.addEventListener('submit', function (e) {
+                    var allValid = true;
+                    Object.keys(fields).forEach(function (key) {
+                        if (!validateField(key)) allValid = false;
+                    });
+                    if (!allValid) {
+                        e.preventDefault();
+                        var firstInvalid = form.querySelector('.input-invalid');
+                        if (firstInvalid) firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    } else {
+                        // PDF is the ONLY popup (form goes to hidden iframe),
+                        // so browser will never block this direct user-gesture open
+                        var pdfWin = window.open('605AthenaOM.pdf', '_blank');
+                        if (!pdfWin || pdfWin.closed || typeof pdfWin.closed === 'undefined') {
+                            document.getElementById('pdf-fallback-toast').style.display = 'block';
+                        }
+                    }
+                });
+            })();
+    </script>
+</body>
+
+</html>

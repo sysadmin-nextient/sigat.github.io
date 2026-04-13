@@ -127,9 +127,11 @@
     <!-- Fallback toast shown only after submit if popup was blocked -->
     <div id="pdf-fallback-toast"
         style="display:none;position:fixed;bottom:80px;right:24px;z-index:9999;background:#1a1c1c;color:#fff;padding:16px 20px;border-left:4px solid #7c000d;border-radius:2px;box-shadow:0 8px 32px rgba(0,0,0,0.25);font-family:'Inter',sans-serif;font-size:0.875rem;max-width:320px;">
-        <p style="margin:0 0 10px 0;"><strong style="color:#ffb3ad;">Popup was blocked.</strong><br>You've submitted successfully! Click below to open your brochure:</p>
+        <p style="margin:0 0 10px 0;"><strong style="color:#ffb3ad;">Popup was blocked.</strong><br>You've submitted
+            successfully! Click below to open your brochure:</p>
         <a href="605AthenaOM.pdf" target="_blank"
-            style="display:inline-block;background:#7c000d;color:#fff;padding:8px 18px;border-radius:2px;font-weight:700;font-size:0.8rem;letter-spacing:0.04em;text-decoration:none;">&#128196; OPEN BROCHURE PDF</a>
+            style="display:inline-block;background:#7c000d;color:#fff;padding:8px 18px;border-radius:2px;font-weight:700;font-size:0.8rem;letter-spacing:0.04em;text-decoration:none;">&#128196;
+            OPEN BROCHURE PDF</a>
         <button onclick="document.getElementById('pdf-fallback-toast').style.display='none'"
             style="display:block;margin-top:10px;background:transparent;border:none;color:rgba(255,255,255,0.5);cursor:pointer;font-size:0.75rem;padding:0;">Dismiss</button>
     </div>
@@ -143,9 +145,9 @@
 
     </nav>
     <main class="pt-32 pb-24 px-8 max-w-7xl mx-auto">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-start">
-            <!-- Left Column: Form & Core Identity -->
-            <div class="lg:col-span-7">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
+            <!-- Left Column: Core Identity -->
+            <div class="lg:col-span-5">
                 <header class="mb-12">
                     <div
                         class="inline-block px-3 py-1 bg-surface-container-high rounded-sm text-[0.75rem] font-bold tracking-[0.05em] text-primary mb-4 font-label">
@@ -160,108 +162,116 @@
                         warehouse solutions.
                     </p>
                 </header>
-                <!-- Contact Form -->
-                <form
-                    action="https://docs.google.com/forms/d/e/1FAIpQLSd-KnilobJlVsBV0Jre-o6jisDWv9BaNFk3Jwa1zfs7nHuy9Q/formResponse"
-                    method="POST" target="google-form-iframe" class="space-y-8 bg-surface-container-low p-10 rounded-sm">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div class="flex flex-col gap-2">
-                            <label
-                                class="text-[0.75rem] font-bold tracking-[0.05em] text-on-surface-variant font-label">FULL
-                                NAME</label>
-                            <input name="entry.1290280160"
-                                class="bg-surface-container-high border-none border-b-2 border-transparent focus:border-primary focus:ring-0 py-3 px-0 font-body text-on-surface placeholder:text-stone-400"
-                                placeholder="John Doe" type="text" />
-                        </div>
-                        <div class="flex flex-col gap-2">
-                            <label
-                                class="text-[0.75rem] font-bold tracking-[0.05em] text-on-surface-variant font-label">EMAIL
-                                ADDRESS</label>
-                            <input name="entry.1314422356"
-                                class="bg-surface-container-high border-none border-b-2 border-transparent focus:border-primary focus:ring-0 py-3 px-0 font-body text-on-surface placeholder:text-stone-400"
-                                placeholder="j.doe@logistics.com" type="email" />
-                        </div>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div class="flex flex-col gap-2">
-                            <label
-                                class="text-[0.75rem] font-bold tracking-[0.05em] text-on-surface-variant font-label">PHONE
-                                NUMBER</label>
-                            <input name="entry.1975997910"
-                                class="bg-surface-container-high border-none border-b-2 border-transparent focus:border-primary focus:ring-0 py-3 px-0 font-body text-on-surface placeholder:text-stone-400"
-                                placeholder="+1 (000) 000-0000" type="tel" />
-                        </div>
-                        <div class="flex flex-col gap-2">
-                            <label
-                                class="text-[0.75rem] font-bold tracking-[0.05em] text-on-surface-variant font-label">COMPANY
-                                NAME</label>
-                            <input name="entry.2055639696"
-                                class="bg-surface-container-high border-none border-b-2 border-transparent focus:border-primary focus:ring-0 py-3 px-0 font-body text-on-surface placeholder:text-stone-400"
-                                placeholder="Acme Logistics Inc." type="text" />
-                        </div>
-                    </div>
-                    <div class="flex flex-col gap-2">
-                        <label
-                            class="text-[0.75rem] font-bold tracking-[0.05em] text-on-surface-variant font-label">MESSAGE <span class="font-normal normal-case tracking-normal opacity-60">(Optional)</span></label>
-                        <textarea name="entry.1532791655"
-                            class="bg-surface-container-high border-none border-b-2 border-transparent focus:border-primary focus:ring-0 py-3 px-0 font-body text-on-surface placeholder:text-stone-400 resize-none"
-                            placeholder="Briefly describe your property requirements..." rows="4"></textarea>
-                    </div>
-                    <button
-                        class="w-full bg-gradient-to-r from-primary to-primary-container text-white py-4 font-headline font-bold text-lg tracking-tight rounded-sm hover:opacity-90 transition-all flex justify-between items-center px-8 group"
-                        type="submit">
-                        SUBMIT INQUIRY
-                        <span
-                            class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
-                    </button>
-                </form>
 
-                <!-- Property Details -->
-                <div class="mt-10 bg-surface-container-low rounded-sm overflow-hidden border-l-4 border-primary">
-                    <div class="px-8 py-5 border-b border-surface-container-high">
-                        <span class="text-[0.75rem] font-bold tracking-[0.05em] text-primary font-label">PROPERTY
-                            DETAILS</span>
+                <!-- New Property Details Section -->
+                <section class="mb-14 font-body">
+                    <!-- Pricing Overview -->
+                    <div
+                        class="mb-10 p-6 bg-red-50 outline outline-1 outline-red-100 rounded-xl flex flex-col md:flex-row justify-between items-start md:items-center gap-4 shadow-sm">
+                        <div class="flex flex-col">
+                            <span
+                                class="text-[#c62828] font-bold tracking-[0.1em] text-[0.8rem] uppercase mb-1">PROPERTY
+                                VALUE / OFFERING PRICE</span>
+                            <span class="text-[#1a2b3c] font-medium text-[0.95rem]">605 Athena Dr.</span>
+                        </div>
+                        <div
+                            class="text-[2.25rem] font-extrabold font-headline text-[#c62828] tracking-tight leading-none">
+                            $2,950,000
+                        </div>
                     </div>
-                    <dl class="divide-y divide-surface-container-high">
-                        <div
-                            class="flex items-center justify-between px-8 py-4 hover:bg-surface-container transition-colors duration-150">
-                            <dt class="text-[0.75rem] font-bold tracking-[0.05em] text-on-surface-variant font-label">
-                                LOT SIZE</dt>
-                            <dd class="font-headline font-bold text-on-surface text-sm">3 Acres</dd>
+
+                    <!-- Facility Details -->
+                    <div class="mb-10">
+                        <h3 class="text-[#c62828] font-bold tracking-[0.1em] text-[0.9rem] uppercase mb-3">FACILITY
+                            DETAILS</h3>
+                        <div class="border-t border-stone-200">
+                            <div class="flex justify-between py-2.5 border-b border-stone-200">
+                                <span class="text-[#7e8a93] tracking-wide text-[1rem]">Lot Size</span>
+                                <span
+                                    class="text-[#c62828] tracking-wide text-[1rem] hover:text-[#e84c4e] transition-colors">3
+                                    Acre</span>
+                            </div>
+                            <div class="flex justify-between py-2.5 border-b border-stone-200">
+                                <span class="text-[#7e8a93] tracking-wide text-[1rem]">Facility Size</span>
+                                <span
+                                    class="text-[#c62828] tracking-wide text-[1rem] hover:text-[#e84c4e] transition-colors"><span
+                                        class="underline underline-offset-4 decoration-1">±</span>10,000 SF
+                                    Building</span>
+                            </div>
+                            <div class="flex justify-between py-2.5 border-b border-stone-200">
+                                <span class="text-[#7e8a93] tracking-wide text-[1rem]">Outdoor Storage</span>
+                                <span
+                                    class="text-[#1a2b3c] tracking-wide text-[1rem] hover:text-[#000] transition-colors"><span
+                                        class="underline underline-offset-4 decoration-1">±</span>2 Acres Fenced &amp;
+                                    Graveled</span>
+                            </div>
+                            <div class="flex justify-between py-2.5 border-b border-stone-200">
+                                <span class="text-[#7e8a93] tracking-wide text-[1rem]">Zoning</span>
+                                <span
+                                    class="text-[#1a2b3c] tracking-wide text-[1rem] hover:text-[#000] transition-colors">E-I</span>
+                            </div>
+                            <div class="flex justify-between py-2.5 border-b border-stone-200">
+                                <span class="text-[#7e8a93] tracking-wide text-[1rem]">Jurisdiction</span>
+                                <span
+                                    class="text-[#1a2b3c] tracking-wide text-[1rem] hover:text-[#000] transition-colors">Athen-Clarke
+                                    County, GA</span>
+                            </div>
+                            <div class="flex justify-between py-2.5 border-b border-stone-200">
+                                <span class="text-[#7e8a93] tracking-wide text-[1rem]">Availability</span>
+                                <span
+                                    class="text-[#c62828] tracking-wide text-[1rem] hover:text-[#e84c4e] transition-colors">For
+                                    Sale or Lease</span>
+                            </div>
                         </div>
-                        <div
-                            class="flex items-center justify-between px-8 py-4 hover:bg-surface-container transition-colors duration-150">
-                            <dt class="text-[0.75rem] font-bold tracking-[0.05em] text-on-surface-variant font-label">
-                                BUILDING SIZE</dt>
-                            <dd class="font-headline font-bold text-on-surface text-sm">10,000 SF</dd>
+                    </div>
+
+                    <!-- Infrastructure -->
+                    <div>
+                        <h3 class="text-[#c62828] font-bold tracking-[0.1em] text-[0.9rem] uppercase mb-3">
+                            INFRASTRUCTURE</h3>
+                        <div class="border-t border-stone-200">
+                            <div class="flex justify-between py-2.5 border-b border-stone-200">
+                                <span class="text-[#7e8a93] tracking-wide text-[1rem]">Paving</span>
+                                <span
+                                    class="text-[#1a2b3c] tracking-wide text-[1rem] hover:text-[#000] transition-colors">Heavy-Duty
+                                    Asphalt</span>
+                            </div>
+                            <div class="flex justify-between py-2.5 border-b border-stone-200">
+                                <span class="text-[#7e8a93] tracking-wide text-[1rem]">Entry</span>
+                                <span
+                                    class="text-[#1a2b3c] tracking-wide text-[1rem] hover:text-[#000] transition-colors">Concrete
+                                    Entry Apron</span>
+                            </div>
+                            <div class="flex justify-between py-2.5 border-b border-stone-200">
+                                <span class="text-[#7e8a93] tracking-wide text-[1rem]">Striping</span>
+                                <span
+                                    class="text-[#1a2b3c] tracking-wide text-[1rem] hover:text-[#000] transition-colors">Full
+                                    Site Striping</span>
+                            </div>
+                            <div class="flex justify-between py-2.5 border-b border-stone-200">
+                                <span class="text-[#7e8a93] tracking-wide text-[1rem]">Security</span>
+                                <span
+                                    class="text-[#1a2b3c] tracking-wide text-[1rem] hover:text-[#000] transition-colors">Individually
+                                    Fenced Perimeter</span>
+                            </div>
+                            <div class="flex justify-between py-2.5 border-b border-stone-200">
+                                <span class="text-[#7e8a93] tracking-wide text-[1rem]">Lighting</span>
+                                <span
+                                    class="text-[#1a2b3c] tracking-wide text-[1rem] hover:text-[#000] transition-colors">Fully
+                                    Lighted Site</span>
+                            </div>
+                            <div class="flex justify-between py-2.5 border-b border-stone-200">
+                                <span class="text-[#7e8a93] tracking-wide text-[1rem]">Construction</span>
+                                <span
+                                    class="text-[#1a2b3c] tracking-wide text-[1rem] hover:text-[#000] transition-colors">Class
+                                    A New Construction</span>
+                            </div>
                         </div>
-                        <div
-                            class="flex items-center justify-between px-8 py-4 hover:bg-surface-container transition-colors duration-150">
-                            <dt class="text-[0.75rem] font-bold tracking-[0.05em] text-on-surface-variant font-label">
-                                OUTDOOR STORAGE</dt>
-                            <dd class="font-headline font-bold text-on-surface text-sm">2 Acres Fenced &amp; Graveled
-                            </dd>
-                        </div>
-                        <div
-                            class="flex items-center justify-between px-8 py-4 hover:bg-surface-container transition-colors duration-150">
-                            <dt class="text-[0.75rem] font-bold tracking-[0.05em] text-on-surface-variant font-label">
-                                CONSTRUCTION</dt>
-                            <dd class="font-headline font-bold text-on-surface text-sm">Class A New Construction</dd>
-                        </div>
-                        <div
-                            class="flex items-center justify-between px-8 py-4 hover:bg-surface-container transition-colors duration-150">
-                            <dt class="text-[0.75rem] font-bold tracking-[0.05em] text-on-surface-variant font-label">
-                                ZONING</dt>
-                            <dd class="font-headline font-bold text-on-surface text-sm">E-I</dd>
-                        </div>
-                        <div
-                            class="flex items-center justify-between px-8 py-4 hover:bg-surface-container transition-colors duration-150">
-                            <dt class="text-[0.75rem] font-bold tracking-[0.05em] text-on-surface-variant font-label">
-                                AVAILABILITY</dt>
-                            <dd class="font-headline font-bold text-primary text-sm">For Sale or Lease</dd>
-                        </div>
-                    </dl>
-                </div>
+                    </div>
+                </section>
+
+
+
 
                 <div class="mt-12 flex flex-col md:flex-row gap-12 items-start md:items-center">
                     <div class="flex flex-col">
@@ -279,28 +289,166 @@
                     </div>
                 </div>
             </div>
-            <!-- Right Column: Property Images -->
-            <div class="lg:col-span-5 flex flex-col gap-6">
-                <!-- Property Image 1 -->
-                <div class="relative group overflow-hidden rounded-sm" style="height: 360px;">
-                    <img class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-                        alt="SIG Industrial Property - Aerial view showing warehouse facility with parking and surrounding land"
-                        src="sig-property-1.png" />
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-on-background/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+            <!-- Right Column: Property Carousel & Form -->
+            <div class="lg:col-span-7 flex flex-col gap-14">
+                <!-- Property Carousel -->
+                <div class="relative w-full rounded-2xl overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.12)] group">
+                    <div id="property-carousel"
+                        class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth hide-scroll-bar h-[400px] md:h-[500px] w-full bg-stone-100">
+                        <div class="snap-always snap-center shrink-0 w-full h-full relative">
+                            <img class="w-full h-full object-cover" alt="SIG Industrial Property 1"
+                                src="sig-property-1.png" />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none">
+                            </div>
+                        </div>
+                        <div class="snap-always snap-center shrink-0 w-full h-full relative">
+                            <img class="w-full h-full object-cover" alt="SIG Industrial Property 2"
+                                src="sig-property-2.png" />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none">
+                            </div>
+                        </div>
+                        <div class="snap-always snap-center shrink-0 w-full h-full relative">
+                            <img class="w-full h-full object-cover" alt="SIG Industrial Property Map"
+                                src="sig-property-map.jpeg" />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none">
+                            </div>
+                        </div>
                     </div>
+                    <!-- Controls -->
+                    <button
+                        onclick="document.getElementById('property-carousel').scrollBy({left: -window.innerWidth, behavior: 'smooth'})"
+                        class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white text-white hover:text-black w-12 h-12 rounded-full flex items-center justify-center backdrop-blur-md transition-all z-10 opacity-0 group-hover:opacity-100 shadow-sm border border-white/30">
+                        <span class="material-symbols-outlined">chevron_left</span>
+                    </button>
+                    <button
+                        onclick="document.getElementById('property-carousel').scrollBy({left: window.innerWidth, behavior: 'smooth'})"
+                        class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white text-white hover:text-black w-12 h-12 rounded-full flex items-center justify-center backdrop-blur-md transition-all z-10 opacity-0 group-hover:opacity-100 shadow-sm border border-white/30">
+                        <span class="material-symbols-outlined">chevron_right</span>
+                    </button>
+                    <style>
+                        .hide-scroll-bar {
+                            -ms-overflow-style: none;
+                            scrollbar-width: none;
+                        }
+
+                        .hide-scroll-bar::-webkit-scrollbar {
+                            display: none;
+                        }
+                    </style>
                 </div>
-                <!-- Property Image 2 -->
-                <div class="relative group overflow-hidden rounded-sm" style="height: 360px;">
-                    <img class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-                        alt="SIG Industrial Property - Aerial view showing warehouse with road access and adjacent land"
-                        src="sig-property-2.png" />
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-on-background/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    </div>
+
+                <!-- Contact Form -->
+                <div>
+                    <h3 class="text-xl font-headline font-extrabold text-on-surface mb-6 uppercase tracking-wider">
+                        Inquire Below</h3>
+                    <form
+                        action="https://docs.google.com/forms/d/e/1FAIpQLSd-KnilobJlVsBV0Jre-o6jisDWv9BaNFk3Jwa1zfs7nHuy9Q/formResponse"
+                        method="POST" target="google-form-iframe"
+                        class="space-y-8 bg-surface-container-low p-10 rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.04)] border border-stone-100">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div class="flex flex-col gap-2">
+                                <label
+                                    class="text-[0.75rem] font-bold tracking-[0.05em] text-on-surface-variant font-label">FULL
+                                    NAME</label>
+                                <input name="entry.1290280160"
+                                    class="bg-surface-container-high border-none border-b-2 border-transparent focus:border-primary focus:ring-0 py-3 px-0 font-body text-on-surface placeholder:text-stone-400"
+                                    placeholder="John Doe" type="text" />
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                <label
+                                    class="text-[0.75rem] font-bold tracking-[0.05em] text-on-surface-variant font-label">EMAIL
+                                    ADDRESS</label>
+                                <input name="entry.1314422356"
+                                    class="bg-surface-container-high border-none border-b-2 border-transparent focus:border-primary focus:ring-0 py-3 px-0 font-body text-on-surface placeholder:text-stone-400"
+                                    placeholder="j.doe@logistics.com" type="email" />
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div class="flex flex-col gap-2">
+                                <label
+                                    class="text-[0.75rem] font-bold tracking-[0.05em] text-on-surface-variant font-label">PHONE
+                                    NUMBER</label>
+                                <input name="entry.1975997910"
+                                    class="bg-surface-container-high border-none border-b-2 border-transparent focus:border-primary focus:ring-0 py-3 px-0 font-body text-on-surface placeholder:text-stone-400"
+                                    placeholder="+1 (000) 000-0000" type="tel" />
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                <label
+                                    class="text-[0.75rem] font-bold tracking-[0.05em] text-on-surface-variant font-label">COMPANY
+                                    NAME</label>
+                                <input name="entry.2055639696"
+                                    class="bg-surface-container-high border-none border-b-2 border-transparent focus:border-primary focus:ring-0 py-3 px-0 font-body text-on-surface placeholder:text-stone-400"
+                                    placeholder="Acme Logistics Inc." type="text" />
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label
+                                class="text-[0.75rem] font-bold tracking-[0.05em] text-on-surface-variant font-label">MESSAGE
+                                <span
+                                    class="font-normal normal-case tracking-normal opacity-60">(Optional)</span></label>
+                            <textarea name="entry.1532791655"
+                                class="bg-surface-container-high border-none border-b-2 border-transparent focus:border-primary focus:ring-0 py-3 px-0 font-body text-on-surface placeholder:text-stone-400 resize-none"
+                                placeholder="Briefly describe your property requirements..." rows="4"></textarea>
+                        </div>
+                        <button
+                            class="w-full bg-gradient-to-r from-primary to-primary-container text-white py-4 font-headline font-bold text-lg tracking-tight rounded-sm hover:opacity-90 transition-all flex justify-between items-center px-8 group"
+                            type="submit">
+                            SUBMIT INQUIRY
+                            <span
+                                class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
+
+        <!-- Connect With Us Section -->
+        <section class="mt-20 flex flex-col items-center text-center max-w-4xl mx-auto w-full">
+            <h2 class="text-[2.25rem] md:text-[2.75rem] font-extrabold font-headline text-[#0a1b29] tracking-tight">
+                Connect With Us</h2>
+            <div class="w-24 h-[3px] bg-[#d32f2f] mt-5 mb-8"></div>
+            <p class="text-[1.1rem] text-[#2c3e50] font-body leading-[1.8] tracking-[0.03em] mb-10 mx-auto">
+                We welcome the opportunity to discuss this investment in more detail. For inquiries,
+                underwriting materials, or to schedule a call, please reach out below.
+            </p>
+
+            <div class="flex flex-wrap justify-center gap-8 text-left w-full">
+                <!-- Card 1 -->
+                <div class="bg-white rounded-[2rem] p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] border border-stone-100 flex flex-col justify-between w-full md:w-[380px]">
+                    <div class="flex items-start gap-5 mb-8">
+                        <img src="CORY.png" alt="Corey Oldknow" class="w-[84px] h-[84px] rounded object-cover shrink-0 bg-stone-100" />
+                        <div class="flex flex-col pt-1">
+                            <h3 class="font-bold text-[1.4rem] leading-[1.1] font-headline text-[#0a1b29] tracking-[-0.03em] mb-2">Corey<br />Oldknow</h3>
+                            <p class="text-[0.65rem] font-bold tracking-[0.05em] text-[#d32f2f] uppercase leading-[1.3]">CHIEF<br />ACQUISITIONS<br />OFFICER</p>
+                        </div>
+                    </div>
+                    <div class="w-full h-[2px] bg-[#0a1b29] mb-5"></div>
+                    <div class="flex flex-col gap-3 text-[0.95rem] font-medium text-[#0a1b29] tracking-tight w-full leading-[1.4]">
+                        <a href="tel:404-819-1983" class="hover:text-[#d32f2f] transition-colors">404-819-1983</a>
+                        <a href="mailto:coreyo@stockageindustrial.com" class="hover:text-[#d32f2f] transition-colors break-words">coreyo@stockageindustrial.com</a>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white rounded-[2rem] p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] border border-stone-100 flex flex-col justify-between w-full md:w-[380px]">
+                    <div class="flex items-start gap-5 mb-8">
+                        <img src="shelby.png" alt="Shelby Vance" class="w-[84px] h-[84px] rounded object-cover shrink-0 bg-stone-100" />
+                        <div class="flex flex-col pt-1">
+                            <h3 class="font-bold text-[1.4rem] leading-[1.1] font-headline text-[#0a1b29] tracking-[-0.03em] mb-2">Shelby<br />Vance</h3>
+                            <p class="text-[0.65rem] font-bold tracking-[0.05em] text-[#d32f2f] uppercase leading-[1.3]">SALES<br />ASSOCIATE</p>
+                        </div>
+                    </div>
+                    <div class="w-full h-[2px] bg-[#0a1b29] mb-5"></div>
+                    <div class="flex flex-col gap-3 text-[0.95rem] font-medium text-[#0a1b29] tracking-tight w-full leading-[1.4]">
+                        <a href="tel:770-727-0615" class="hover:text-[#d32f2f] transition-colors">770-727-0615</a>
+                        <a href="mailto:shelbyk@33realtymanagement.com" class="hover:text-[#d32f2f] transition-colors break-words">shelbyk@33realtymanagement.com</a>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
     <!-- Footer -->
     <footer class="bg-[#f3f3f3] dark:bg-stone-900 border-none">
@@ -380,6 +528,38 @@
                     }
                 });
             })();
+
+        // Carousel Auto-scroll
+        (function () {
+            var carousel = document.getElementById('property-carousel');
+            if (!carousel) return;
+
+            var scrollInterval;
+
+            function startAutoScroll() {
+                scrollInterval = setInterval(function () {
+                    // If we reached the end, scroll back to the beginning
+                    if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth - 10) {
+                        carousel.scrollTo({ left: 0, behavior: 'smooth' });
+                    } else {
+                        carousel.scrollBy({ left: carousel.clientWidth, behavior: 'smooth' });
+                    }
+                }, 3000);
+            }
+
+            function stopAutoScroll() {
+                clearInterval(scrollInterval);
+            }
+
+            startAutoScroll();
+
+            // Pause on hover over the container
+            var carouselContainer = carousel.parentElement;
+            if (carouselContainer) {
+                carouselContainer.addEventListener('mouseenter', stopAutoScroll);
+                carouselContainer.addEventListener('mouseleave', startAutoScroll);
+            }
+        })();
     </script>
 </body>
 
